@@ -3,7 +3,7 @@
 
 
 
-# nycomplaints
+# nycomplaints <img src="man/figures/hex-nycomplaints-sm.png" align="right" width="240">
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/kjhealy/nycomplaints/workflows/R-CMD-check/badge.svg)](https://github.com/kjhealy/nycomplaints/actions)
