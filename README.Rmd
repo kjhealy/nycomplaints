@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # nycomplaints
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/kjhealy/nycomplaints/workflows/R-CMD-check/badge.svg)](https://github.com/kjhealy/nycomplaints/actions)
 <!-- badges: end -->
 The dataset comes from CouncilStat, which is used by many NYC Council district offices to enter and track constituent cases that can range from issues around affordable housing, to potholes and pedestrian safety. This dataset aggregates the information that individual staff have input. However, district staffs handle a wide range of complex issues. Each offices uses the program differently, and thus records cases, differently and so comparisons between accounts may be difficult. Not all offices use the program. For more info - http://labs.council.nyc/districts/data/
 
@@ -23,33 +24,60 @@ Data sourced from [NYC Open Data](https://data.cityofnewyork.us/City-Government/
 
 ## Installation
 
-You can install the development version of nycomplaints like so:
+There are two ways to install the `nycomplaints` package. 
+
+### Install direct from GitHub
+
+You can install nycomplaints from [GitHub](https://github.com/kjhealy/nycomplaints) with:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+remotes::install_github("kjhealy/nycomplaints@main")
 ```
 
-## Example
+### Installation using `drat`
 
-This is a basic example which shows you how to solve a common problem:
+While using `install_github()` works just fine, it would be nicer to be able to just type `install.packages("nycomplaints")` or `update.packages("nycomplaints")` in the ordinary way. We can do this using Dirk Eddelbuettel's [drat](http://eddelbuettel.github.io/drat/DratForPackageUsers.html) package. Drat provides a convenient way to make R aware of package repositories other than CRAN.
 
-```{r example}
+First, install `drat`:
+
+```{r, eval=FALSE}
+
+if (!require("drat")) {
+    install.packages("drat")
+    library("drat")
+}
+```
+
+Then use `drat` to tell R about the repository where `nycomplaints` is hosted:
+
+
+```{r, eval=FALSE}
+drat::addRepo("kjhealy")
+```
+
+You can now install `nycomplaints` in the usual way:
+
+```{r, eval=FALSE}
+install.packages("nycomplaints")
+```
+
+To ensure that the `nycomplaints` repository is always available, you can add the following line to your `.Rprofile` or `.Rprofile.site` file:
+
+
+```{r, eval=FALSE}
+drat::addRepo("kjhealy")
+```
+
+
+With that in place you'll be able to do `install.packages("nycomplaints")` or `update.packages("nycomplaints")` and have everything work as you'd expect. 
+
+Note that my drat repository only contains data packages that are not on CRAN, so you will never be in danger of grabbing the wrong version of any other package.
+
+## Loading the Data
+
+```{r load}
+library(tidyverse) # Optional but strongly recommended
 library(nycomplaints)
-## basic example code
+
+nycomplaints
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.

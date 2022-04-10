@@ -1,0 +1,35 @@
+destination: docs
+authors:
+  Kieran Healy:
+    href: http://kieranhealy.org
+
+url: https://kjhealy.github.io/nycomplaints
+
+template:
+  package: preferably
+
+reference:
+  - title: "Data"
+    desc: The complaints dataset.
+    contents:
+      - nycomplaints
+  - title: "Internal Functions"
+    desc: These functions are for package housekeeping only
+    contents:
+      - fmt_nc
+      - fmt_nr
+
+navbar:
+  right:
+   - icon: fa-github
+     href: https://github.com/kjhealy/nycomplaints
+
+figures:
+  dev: grDevices::png
+  dpi: 200
+  dev.args: []
+  fig.ext: png
+  fig.width: 7.2916667
+  fig.height: ~
+  fig.retina: 2
+  fig.asp: 1.618
