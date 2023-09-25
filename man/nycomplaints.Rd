@@ -35,10 +35,17 @@ Table: Data summary\tabular{ll}{
    Number of columns \tab 11 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
-   character \tab 9 \cr
    Date \tab 2 \cr
+   character \tab 9 \cr
    ________________________ \tab  \cr
    Group variables \tab None \cr
+}
+
+
+\strong{Variable type: Date}\tabular{lrrlllr}{
+   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
+   opendate \tab 0 \tab 1.00 \tab 2015-01-01 \tab 2022-04-07 \tab 2017-10-02 \tab 2596 \cr
+   closedate \tab 16046 \tab 0.93 \tab 2015-01-02 \tab 2022-04-07 \tab 2018-01-29 \tab 2107 \cr
 }
 
 
@@ -53,13 +60,6 @@ Table: Data summary\tabular{ll}{
    city \tab 989 \tab 1.00 \tab 1 \tab 36 \tab 0 \tab 992 \tab 0 \cr
    council_dist \tab 9728 \tab 0.96 \tab 4 \tab 12 \tab 0 \tab 154 \tab 0 \cr
    community_board \tab 16091 \tab 0.93 \tab 1 \tab 16 \tab 0 \tab 94 \tab 0 \cr
-}
-
-
-\strong{Variable type: Date}\tabular{lrrlllr}{
-   skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   opendate \tab 0 \tab 1.00 \tab 2015-01-01 \tab 2022-04-07 \tab 2017-10-02 \tab 2596 \cr
-   closedate \tab 16046 \tab 0.93 \tab 2015-01-02 \tab 2022-04-07 \tab 2018-01-29 \tab 2107 \cr
 }
 
 

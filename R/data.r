@@ -25,3 +25,32 @@
 #' @author Kieran Healy
 #' @references \url{https://data.cityofnewyork.us/City-Government/NYC-Council-Constituent-Services/9hzi-kbqb},\url{http://labs.council.nyc/districts/data/}
 "nycomplaints"
+
+
+#' @title Demographic data for NYC zip codes
+#' @description USPS zip codes with corresponding census ZCTAs
+#' @format A data frame with 68 rows and 10 variables:
+#' \describe{
+#'   \item{\code{zip}}{character Zip code}
+#'   \item{\code{population}}{double Population count: B01001_001}
+#'   \item{\code{white_alone}}{double B02001_002}
+#'   \item{\code{black_alone}}{double B02001_003}
+#'   \item{\code{asian_alone}}{double B02001_005}
+#'   \item{\code{two_or_more_races}}{double B02001_008}
+#'   \item{\code{hispanic}}{double B03003_001}
+#'   \item{\code{nonhispanic_white}}{double B03002_003}
+#'   \item{\code{nonhispanic_black}}{double B03002_004}
+#'   \item{\code{med_hhinc}}{double B19013_001}
+#'}
+#' @details USPS zip code list with corresponding ZCTAs; demographic data from the ACS
+"nyzip_demog"
+
+#' @title Census variables
+#' @description Lookup table for ACS variable names
+#' @format A data frame with 9 rows and 2 variables:
+#' \describe{
+#'   \item{\code{variable}}{character Census variable name}
+#'   \item{\code{varname}}{character Short name used in zipcode table}
+#'}
+#' @details None.
+"census_vars"
