@@ -1,25 +1,36 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-
-
 # nycomplaints <img src="man/figures/hex-nycomplaints-sm.png" align="right" width="240">
 
 <!-- badges: start -->
+
 [![R-CMD-check](https://github.com/kjhealy/nycomplaints/workflows/R-CMD-check/badge.svg)](https://github.com/kjhealy/nycomplaints/actions)
-<!-- badges: end -->
-The dataset comes from CouncilStat, which is used by many NYC Council district offices to enter and track constituent cases that can range from issues around affordable housing, to potholes and pedestrian safety. This dataset aggregates the information that individual staff have input. However, district staffs handle a wide range of complex issues. Each offices uses the program differently, and thus records cases, differently and so comparisons between accounts may be difficult. Not all offices use the program. For more info - http://labs.council.nyc/districts/data/
+<!-- badges: end --> The dataset comes from CouncilStat, which is used
+by many NYC Council district offices to enter and track constituent
+cases that can range from issues around affordable housing, to potholes
+and pedestrian safety. This dataset aggregates the information that
+individual staff have input. However, district staffs handle a wide
+range of complex issues. Each offices uses the program differently, and
+thus records cases, differently and so comparisons between accounts may
+be difficult. Not all offices use the program. For more info -
+<http://labs.council.nyc/districts/data/>
 
-This is a teaching package; the data are not clean---in particular there are spurious zip codes in the complaints data, as well as other issues.
+This is a teaching package; the data are not clean—in particular there
+are spurious zip codes in the complaints data, as well as other issues.
 
-Data sourced from [NYC Open Data](https://data.cityofnewyork.us/City-Government/NYC-Council-Constituent-Services/9hzi-kbqb)
+Data sourced from [NYC Open
+Data](https://data.cityofnewyork.us/City-Government/NYC-Council-Constituent-Services/9hzi-kbqb)
 
-The package also includes `nyzip_demog` and `census_vars`. The former is a table of five-year ACS estimates of some demographic features by ZCTA. The latter is a table showing the specific Census Bureau variables used to construct the demographic table.
-
+The package also includes `nyzip_demog` and `census_vars`. The former is
+a table of five-year ACS estimates of some demographic features by ZCTA.
+The latter is a table showing the specific Census Bureau variables used
+to construct the demographic table.
 
 ## Installation
 
-You can install nycomplaints from [GitHub](https://github.com/kjhealy/nycomplaints) with:
+You can install nycomplaints from
+[GitHub](https://github.com/kjhealy/nycomplaints) with:
 
 ``` r
 remotes::install_github("kjhealy/nycomplaints@main")
@@ -27,19 +38,8 @@ remotes::install_github("kjhealy/nycomplaints@main")
 
 ## Loading the Data
 
-
-```r
+``` r
 library(tidyverse) # Optional but strongly recommended
-#> ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-#> ✔ dplyr     1.1.2     ✔ readr     2.1.4
-#> ✔ forcats   1.0.0     ✔ stringr   1.5.0
-#> ✔ ggplot2   3.4.2     ✔ tibble    3.2.1
-#> ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-#> ✔ purrr     1.0.1     
-#> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-#> ✖ dplyr::filter() masks stats::filter()
-#> ✖ dplyr::lag()    masks stats::lag()
-#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 library(nycomplaints)
 
 nycomplaints

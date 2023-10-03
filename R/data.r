@@ -1,5 +1,5 @@
 #' @title Complaints to NYC Council Constituent Services
-#' @description Complaints data from New York City;s CouncilStat
+#' @description Complaints data from New York City's CouncilStat
 #' @format A data frame with `r fmt_nr(nycomplaints)` rows and `r fmt_nc(nycomplaints)` variables:
 #' \describe{
 #'   \item{\code{unique_key}}{character Complaint identifier.}

@@ -37,7 +37,7 @@ remotes::install_github("kjhealy/nycomplaints@main")
 
 ## Loading the Data
 
-```{r load}
+```{r load, message=FALSE}
 library(tidyverse) # Optional but strongly recommended
 library(nycomplaints)
 
