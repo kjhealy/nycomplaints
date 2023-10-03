@@ -25,7 +25,7 @@ A data frame with 240,027 rows and 11 variables:
 nycomplaints
 }
 \description{
-Complaints data from New York City;s CouncilStat
+Complaints data from New York City's CouncilStat
 }
 \details{
 Table: Data summary\tabular{ll}{
