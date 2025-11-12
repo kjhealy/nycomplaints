@@ -5,76 +5,42 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="CouncilStat data on constituent issues in New York City.">
-<!-- Inform modern browsers that this page supports both dark and light color schemes,
-  and the page author prefers light. --><meta name="color-scheme" content="dark light">
-<script>
-  // If `prefers-color-scheme` is not supported, fall back to light mode.
-  // i.e. In this case, inject the `light` CSS before the others, with
-  // no media filter so that it will be downloaded with highest priority.
-  if (window.matchMedia("(prefers-color-scheme: dark)").media === "not all") {
-    document.documentElement.style.display = "none";
-    document.head.insertAdjacentHTML(
-      "beforeend",
-      "<link id=\"css\" rel=\"stylesheet\" href=\"https://bootswatch.com/5/flatly/bootstrap.css\" onload=\"document.documentElement.style.display = ''\">"
-    );
-  }
-</script><title>NYC Complaints • nycomplaints</title>
+<title>NYC Complaints • nycomplaints</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="NYC Complaints">
+<link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/IBM_Plex_Sans-0.4.10/font.css" rel="stylesheet">
+<link href="deps/IBM_Plex_Mono-0.4.10/font.css" rel="stylesheet">
+<link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="NYC Complaints">
+<meta name="description" content="CouncilStat data on constituent issues in New York City.">
 <meta property="og:description" content="CouncilStat data on constituent issues in New York City.">
-<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]--><!-- Flatly Theme - Light  --><link id="css-light" rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
-<!-- Darkly Theme - Dark --><link id="css-dark" rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.css" media="(prefers-color-scheme: dark)">
-<!-- preferably CSS --><link rel="stylesheet" href="preferably.css">
-<link id="css-code-light" rel="stylesheet" href="code-color-scheme-light.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
-<link id="css-code-dark" rel="stylesheet" href="code-color-scheme-dark.css" media="(prefers-color-scheme: dark)">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
-    
 
-    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary"><div class="container">
-    
+
+    <nav class="navbar navbar-expand-lg fixed-top bg-light" data-bs-theme="light" aria-label="Site navigation"><div class="container">
+
     <a class="navbar-brand me-2" href="index.html">nycomplaints</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
 
-    
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div id="navbar" class="collapse navbar-collapse ms-2">
+    <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="nav-item">
-  <a class="nav-link" href="reference/index.html">Reference</a>
-</li>
+<li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
       </ul>
-<form class="form-inline my-2 my-lg-0" role="search">
-        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off">
-</form>
-
-      <ul class="navbar-nav">
-<li class="nav-item">
-  <a class="external-link nav-link" href="https://github.com/kjhealy/nycomplaints">
-    <span class="fa fa-github"></span>
-     
-  </a>
-</li>
-
-        
-        
-        
+<ul class="navbar-nav">
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/kjhealy/nycomplaints"><span class="fa fa-github"></span></a></li>
       </ul>
 </div>
 
-    
+
   </div>
 </nav><div class="container template-home">
 <div class="row">
@@ -85,7 +51,7 @@
 
 <p>This is a teaching package; the data are not clean—in particular there are spurious zip codes in the complaints data, as well as other issues.</p>
 <p>Data sourced from <a href="https://data.cityofnewyork.us/City-Government/NYC-Council-Constituent-Services/9hzi-kbqb" class="external-link">NYC Open Data</a></p>
-<p>The package also includes <code>nyzip_demog</code> and <code>census_vars</code>. The former is a table of five-year ACS estimates of some demographic features by ZCTA. The latter is a table showing the specific Census Bureau variables used to construct the demographic table.</p>
+<p>The package also includes <code>nyc_zips</code> and <code>census_vars</code>. The former is a table of NYC zip codes. The latter is a table the names of some ACS variables.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -101,40 +67,38 @@
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kjhealy/nycomplaints" class="external-link">nycomplaints</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">nycomplaints</span></span>
-<span><span class="co">#&gt; # A tibble: 240,027 × 11</span></span>
+<span><span class="co">#&gt; # A tibble: 341,299 × 11</span></span>
 <span><span class="co">#&gt;    unique_key   account opendate   closedate  complaint_type    descriptor zip  </span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt;   &lt;date&gt;     &lt;date&gt;     &lt;chr&gt;             &lt;chr&gt;      &lt;chr&gt;</span></span>
-<span><span class="co">#&gt;  1 NYCC01506329 NYCC01  2015-01-02 2015-01-14 Aging             Senior Ce… 11220</span></span>
-<span><span class="co">#&gt;  2 NYCC01506331 NYCC01  2015-01-04 2016-03-25 Aging             &lt;NA&gt;       11373</span></span>
-<span><span class="co">#&gt;  3 NYCC01506332 NYCC01  2015-01-04 2016-03-25 Aging             &lt;NA&gt;       11373</span></span>
-<span><span class="co">#&gt;  4 NYCC01506333 NYCC01  2015-01-04 2017-02-23 Health            Rats/Rode… 10006</span></span>
-<span><span class="co">#&gt;  5 NYCC01506334 NYCC01  2015-01-05 2015-01-15 Land Use and Zon… &lt;NA&gt;       10003</span></span>
-<span><span class="co">#&gt;  6 NYCC01506335 NYCC01  2015-01-06 2016-02-09 Transportation    Pot Holes  10002</span></span>
-<span><span class="co">#&gt;  7 NYCC01506338 NYCC01  2015-01-06 2015-03-17 Transportation    Parking P… 10002</span></span>
-<span><span class="co">#&gt;  8 NYCC01506342 NYCC01  2015-01-08 2015-01-08 Economy/Jobs      Business … 11355</span></span>
-<span><span class="co">#&gt;  9 NYCC01506343 NYCC01  2015-01-08 2015-01-08 Immigration       Visas      10002</span></span>
-<span><span class="co">#&gt; 10 NYCC01506345 NYCC01  2015-01-08 2015-01-08 Housing and Buil… Seeking a… 10013</span></span>
-<span><span class="co">#&gt; # ℹ 240,017 more rows</span></span>
+<span><span class="co">#&gt;  1 NYCC34519748 NYCC34  2025-01-09 NA         Governmental Ope… Voting In… 11385</span></span>
+<span><span class="co">#&gt;  2 NYCC34519746 NYCC34  2025-01-09 2025-01-09 Utilities         Con Edison 11237</span></span>
+<span><span class="co">#&gt;  3 NYCC34519742 NYCC34  2025-01-08 2025-01-08 Housing and Buil… Heat/Hot … 11249</span></span>
+<span><span class="co">#&gt;  4 NYCC34519741 NYCC34  2025-01-06 2025-01-08 Housing and Buil… Heat/Hot … 11211</span></span>
+<span><span class="co">#&gt;  5 NYCC34519743 NYCC34  2024-12-23 2025-01-09 Housing and Buil… Maintenan… 11211</span></span>
+<span><span class="co">#&gt;  6 NYCC34519744 NYCC34  2024-12-11 2025-01-09 General Welfare   SSI and S… 11211</span></span>
+<span><span class="co">#&gt;  7 NYCC34519745 NYCC34  2024-09-05 2025-01-09 Finance           Tax Prepa… 11385</span></span>
+<span><span class="co">#&gt;  8 NYCC31505454 NYCC31  2024-06-04 NA         Sanitation        OVERGROWN… &lt;NA&gt; </span></span>
+<span><span class="co">#&gt;  9 NYCC31505447 NYCC31  2024-05-30 NA         &lt;NA&gt;              &lt;NA&gt;       11413</span></span>
+<span><span class="co">#&gt; 10 NYCC31505450 NYCC31  2024-05-30 NA         &lt;NA&gt;              &lt;NA&gt;       11413</span></span>
+<span><span class="co">#&gt; # ℹ 341,289 more rows</span></span>
 <span><span class="co">#&gt; # ℹ 4 more variables: borough &lt;chr&gt;, city &lt;chr&gt;, council_dist &lt;chr&gt;,</span></span>
 <span><span class="co">#&gt; #   community_board &lt;chr&gt;</span></span>
 <span></span>
-<span><span class="va">nyzip_demog</span></span>
-<span><span class="co">#&gt; # A tibble: 68 × 10</span></span>
-<span><span class="co">#&gt;    zip   population white_alone black_alone asian_alone two_or_more_races</span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;      &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;             &lt;dbl&gt;</span></span>
-<span><span class="co">#&gt;  1 10001      26966       16963        2117        4527              2178</span></span>
-<span><span class="co">#&gt;  2 10002      76807       24687        6453       30288              5880</span></span>
-<span><span class="co">#&gt;  3 10003      54447       38481        2823        9110              2967</span></span>
-<span><span class="co">#&gt;  4 10004       4795        2758         162        1593               262</span></span>
-<span><span class="co">#&gt;  5 10005       8637        6496         147        1180               535</span></span>
-<span><span class="co">#&gt;  6 10006       3894        2526         255         895               150</span></span>
-<span><span class="co">#&gt;  7 10007       8194        6173         736        1064                78</span></span>
-<span><span class="co">#&gt;  8 10009      60000       34924        4577        7995              5469</span></span>
-<span><span class="co">#&gt;  9 10010      33193       22952        2952        4955              1491</span></span>
-<span><span class="co">#&gt; 10 10011      51867       38919        2322        4854              3795</span></span>
-<span><span class="co">#&gt; # ℹ 58 more rows</span></span>
-<span><span class="co">#&gt; # ℹ 4 more variables: hispanic &lt;dbl&gt;, nonhispanic_white &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   nonhispanic_black &lt;dbl&gt;, med_hhinc &lt;dbl&gt;</span></span>
+<span><span class="va">nyc_zips</span></span>
+<span><span class="co">#&gt; # A tibble: 211 × 6</span></span>
+<span><span class="co">#&gt;      zip borough       city          county          long_county    short_county</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;         &lt;chr&gt;         &lt;chr&gt;           &lt;chr&gt;          &lt;chr&gt;       </span></span>
+<span><span class="co">#&gt;  1 11368 Queens        Corona        Queens County   Queens County… Queens      </span></span>
+<span><span class="co">#&gt;  2 11208 Brooklyn      Brooklyn      Kings County    Kings County,… Kings       </span></span>
+<span><span class="co">#&gt;  3 11385 Queens        Ridgewood     Queens County   Queens County… Queens      </span></span>
+<span><span class="co">#&gt;  4 11373 Queens        Elmhurst      Queens County   Queens County… Queens      </span></span>
+<span><span class="co">#&gt;  5 11226 Brooklyn      Brooklyn      Kings County    Kings County,… Kings       </span></span>
+<span><span class="co">#&gt;  6 11236 Brooklyn      Brooklyn      Kings County    Kings County,… Kings       </span></span>
+<span><span class="co">#&gt;  7 10467 Bronx         Bronx         Bronx County    Bronx County,… Bronx       </span></span>
+<span><span class="co">#&gt;  8 10025 Manhattan     New York      New York County New York Coun… New York    </span></span>
+<span><span class="co">#&gt;  9 11207 Brooklyn      Brooklyn      Kings County    Kings County,… Kings       </span></span>
+<span><span class="co">#&gt; 10 10314 Staten Island Staten Island Richmond County Richmond Coun… Richmond    </span></span>
+<span><span class="co">#&gt; # ℹ 201 more rows</span></span>
 <span></span>
 <span><span class="va">census_vars</span></span>
 <span><span class="co">#&gt; # A tibble: 9 × 2</span></span>
@@ -179,7 +143,7 @@
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>
-<a href="http://kieranhealy.org" class="external-link">Kieran Healy</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/https://orcid.org/0000-0001-9114-981X" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<a href="http://kieranhealy.org" class="external-link">Kieran Healy</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/https://orcid.org/0000-0001-9114-981X" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
 </ul>
 </div>
 
@@ -194,23 +158,20 @@
 </div>
 
 
-    <footer><div class="copyright">
-  <p></p>
-<p>Developed by <a href="http://kieranhealy.org" class="external-link">Kieran Healy</a>.</p>
+    <footer><div class="pkgdown-footer-left">
+  <p>Developed by <a href="http://kieranhealy.org" class="external-link">Kieran Healy</a>.</p>
 </div>
 
-<div class="pkgdown">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
-  <p class="preferably">Using <a href="https://preferably.amirmasoudabdol.name/?source=footer" class="external-link">preferably</a> template.</p>
+<div class="pkgdown-footer-right">
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>
 </div>
 
-  
 
-  
+
+
 
   </body>
 </html>
