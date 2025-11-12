@@ -17,7 +17,7 @@ reference:
     desc: The complaints dataset.
     contents:
       - nycomplaints
-      - nyzip_demog
+      - nyc_zips
       - census_vars
   - title: "Internal Functions"
     desc: These functions are for package housekeeping only
