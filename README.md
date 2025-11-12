@@ -1,7 +1,9 @@
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # nycomplaints <img src="man/figures/hex-nycomplaints-sm.png" align="right" width="240">
+
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/kjhealy/nycomplaints/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kjhealy/nycomplaints/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 <!-- badges: start -->
 
