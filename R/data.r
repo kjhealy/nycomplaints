@@ -27,23 +27,18 @@
 "nycomplaints"
 
 
-#' @title Demographic data for NYC zip codes
-#' @description USPS zip codes with corresponding census ZCTAs
-#' @format A data frame with 68 rows and 10 variables:
-#' \describe{
-#'   \item{\code{zip}}{character Zip code}
-#'   \item{\code{population}}{double Population count: B01001_001}
-#'   \item{\code{white_alone}}{double B02001_002}
-#'   \item{\code{black_alone}}{double B02001_003}
-#'   \item{\code{asian_alone}}{double B02001_005}
-#'   \item{\code{two_or_more_races}}{double B02001_008}
-#'   \item{\code{hispanic}}{double B03003_001}
-#'   \item{\code{nonhispanic_white}}{double B03002_003}
-#'   \item{\code{nonhispanic_black}}{double B03002_004}
-#'   \item{\code{med_hhinc}}{double B19013_001}
-#'}
-#' @details USPS zip code list with corresponding ZCTAs; demographic data from the ACS
-"nyzip_demog"
+#' @title NYC Zip Codes by borough
+#' @description Zip codes and borough names
+#' @format A data frame with 211 rows and 5 variables:
+#' - `zip` Zip code (char)
+#' - `borough` Borough name
+#' - `city` City name (USPS)
+#' - `county` County name
+#' - `long_county` County name, New York
+#' - `short_county` One word county  name
+#' @details Sources: https://www.nyc.gov/assets/planning/download/office/data-maps/nyc-population/census2000/sf1p11.xls
+#' and https://worldpopulationreview.com/zips/new-york
+"nyc_zips"
 
 #' @title Census variables
 #' @description Lookup table for ACS variable names

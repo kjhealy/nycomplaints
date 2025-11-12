@@ -24,7 +24,7 @@ This is a teaching package; the data are not clean---in particular there are spu
 
 Data sourced from [NYC Open Data](https://data.cityofnewyork.us/City-Government/NYC-Council-Constituent-Services/9hzi-kbqb)
 
-The package also includes `nyzip_demog` and `census_vars`. The former is a table of five-year ACS estimates of some demographic features by ZCTA. The latter is a table showing the specific Census Bureau variables used to construct the demographic table.
+The package also includes `nyc_zips` and `census_vars`. The former is a table of NYC zip codes. The latter is a table the names of some ACS variables.
 
 
 ## Installation
@@ -43,7 +43,7 @@ library(nycomplaints)
 
 nycomplaints
 
-nyzip_demog
+nyc_zips
 
 census_vars
 ```

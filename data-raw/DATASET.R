@@ -3,6 +3,28 @@
 library(tidyverse)
 library(here)
 
+# Prep zip codes
+ny_county_boros <- tribble(
+  ~long_county                , ~county           , ~short_county , ~borough        ,
+  "New York County, New York" , "New York County" , "New York"    , "Manhattan"     ,
+  "Queens County, New York"   , "Queens County"   , "Queens"      , "Queens"        ,
+  "Kings County, New York"    , "Kings County"    , "Kings"       , "Brooklyn"      ,
+  "Bronx County, New York"    , "Bronx County"    , "Bronx"       , "Bronx"         ,
+  "Richmond County, New York" , "Richmond County" , "Richmond"    , "Staten Island"
+)
+
+nyc_ziptable <- read_csv(here("data-raw", "nyc-ziptable.csv")) |>
+  janitor::clean_names() |>
+  select(-population_a) |>
+  filter(county %in% ny_county_boros$county) |>
+  rename(zip = zip_code)
+
+nyc_zips <- nyc_ziptable |>
+  left_join(ny_county_boros) |>
+  relocate(borough, .after = zip)
+
+usethis::use_data(nyc_zips, overwrite = TRUE, compress = "xz")
+
 
 nycomplaints <- read_csv(
   here("data-raw", "NYC_Council_Constituent_Services_20251112.csv"),
@@ -21,7 +43,7 @@ nycomplaints <- read_csv(
   )
 ) |>
   janitor::clean_names() |>
-  filter(str_detect(zip, "(\\d{5})")) |>
+  # filter(str_detect(zip, "(\\d{5})")) |>
   select(unique_key:opendate, closedate, everything())
 
 usethis::use_data(nycomplaints, overwrite = TRUE, compress = "xz")
@@ -32,7 +54,7 @@ library(tidycensus)
 all_vars_acs5 <-
   load_variables(year = 2021, dataset = "acs5")
 
-pop_vars <- tribble(
+census_vars <- tribble(
   ~variable    , ~varname            ,
   "B01001_001" , "population"        ,
   "B02001_002" , "white_alone"       ,
@@ -52,25 +74,7 @@ zcta_info <- get_acs(
   variables = pop_vars$variable
 )
 
-nyzips_usps <- readxl::read_xlsx(here::here(
-  "data-raw",
-  "nyc_zips_usps.xlsx"
-)) |>
-  mutate(name = str_trim(str_remove(name, "NEW YORK NY"))) |>
-  rename(zip = name)
 
-nyzip_info <- zcta_info |>
-  separate_wider_delim(NAME, delim = " ", names = c("zcta", "zip")) |>
-  filter(zip %in% nyzips_usps$zip) |>
-  left_join(pop_vars, by = "variable")
-
-nyzip_demog <- nyzip_info |>
-  select(zip, varname, estimate) |>
-  pivot_wider(names_from = varname, values_from = estimate)
-
-census_vars <- pop_vars
-
-usethis::use_data(nyzip_demog, overwrite = TRUE, compress = "xz")
 usethis::use_data(census_vars, overwrite = TRUE, compress = "xz")
 
 
