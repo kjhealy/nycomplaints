@@ -5,7 +5,7 @@
 \alias{nycomplaints}
 \title{Complaints to NYC Council Constituent Services}
 \format{
-A data frame with 240,027 rows and 11 variables:
+A data frame with 289,765 rows and 11 variables:
 \describe{
 \item{\code{unique_key}}{character Complaint identifier.}
 \item{\code{account}}{character NYC Council District that created the casework, this may or not be the district that the constituent lives in.}
@@ -31,7 +31,7 @@ Complaints data from New York City's CouncilStat
 Table: Data summary\tabular{ll}{
     \tab  \cr
    Name \tab nycomplaints \cr
-   Number of rows \tab 240027 \cr
+   Number of rows \tab 289765 \cr
    Number of columns \tab 11 \cr
    _______________________ \tab  \cr
    Column type frequency: \tab  \cr
@@ -44,22 +44,22 @@ Table: Data summary\tabular{ll}{
 
 \strong{Variable type: Date}\tabular{lrrlllr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab median \tab n_unique \cr
-   opendate \tab 0 \tab 1.00 \tab 2015-01-01 \tab 2022-04-07 \tab 2017-10-02 \tab 2596 \cr
-   closedate \tab 16046 \tab 0.93 \tab 2015-01-02 \tab 2022-04-07 \tab 2018-01-29 \tab 2107 \cr
+   opendate \tab 0 \tab 1.00 \tab 2015-01-01 \tab 2025-01-09 \tab 2018-06-13 \tab 3287 \cr
+   closedate \tab 12046 \tab 0.96 \tab 2015-01-02 \tab 2025-01-09 \tab 2018-11-16 \tab 2665 \cr
 }
 
 
 \strong{Variable type: character}\tabular{lrrrrrrr}{
    skim_variable \tab n_missing \tab complete_rate \tab min \tab max \tab empty \tab n_unique \tab whitespace \cr
-   unique_key \tab 0 \tab 1.00 \tab 12 \tab 12 \tab 0 \tab 239958 \tab 0 \cr
+   unique_key \tab 0 \tab 1.00 \tab 12 \tab 12 \tab 0 \tab 289693 \tab 0 \cr
    account \tab 0 \tab 1.00 \tab 6 \tab 6 \tab 0 \tab 51 \tab 0 \cr
-   complaint_type \tab 5060 \tab 0.98 \tab 3 \tab 25 \tab 0 \tab 56 \tab 0 \cr
-   descriptor \tab 13257 \tab 0.94 \tab 2 \tab 56 \tab 0 \tab 1002 \tab 0 \cr
-   zip \tab 0 \tab 1.00 \tab 5 \tab 5 \tab 0 \tab 1046 \tab 0 \cr
-   borough \tab 16158 \tab 0.93 \tab 5 \tab 13 \tab 0 \tab 5 \tab 0 \cr
-   city \tab 989 \tab 1.00 \tab 1 \tab 36 \tab 0 \tab 992 \tab 0 \cr
-   council_dist \tab 9728 \tab 0.96 \tab 4 \tab 12 \tab 0 \tab 154 \tab 0 \cr
-   community_board \tab 16091 \tab 0.93 \tab 1 \tab 16 \tab 0 \tab 94 \tab 0 \cr
+   complaint_type \tab 5969 \tab 0.98 \tab 3 \tab 25 \tab 0 \tab 58 \tab 0 \cr
+   descriptor \tab 17970 \tab 0.94 \tab 1 \tab 56 \tab 0 \tab 1182 \tab 0 \cr
+   zip \tab 0 \tab 1.00 \tab 5 \tab 5 \tab 0 \tab 1196 \tab 0 \cr
+   borough \tab 21893 \tab 0.92 \tab 5 \tab 13 \tab 0 \tab 5 \tab 0 \cr
+   city \tab 1143 \tab 1.00 \tab 1 \tab 36 \tab 0 \tab 1144 \tab 0 \cr
+   council_dist \tab 15284 \tab 0.95 \tab 4 \tab 12 \tab 0 \tab 155 \tab 0 \cr
+   community_board \tab 21814 \tab 0.92 \tab 1 \tab 16 \tab 0 \tab 98 \tab 0 \cr
 }
 
 
