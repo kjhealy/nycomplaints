@@ -1,0 +1,8 @@
+bibentry(
+  bibtype  = "Manual",
+  title    = "nycomplaints: New York City 311 Complaints Data",
+  author   = "Kieran Healy",
+  year     = "2025",
+  note     = "R package version 0.1.0",
+  url      = "https://github.com/kjhealy/nycomplaints"
+)
