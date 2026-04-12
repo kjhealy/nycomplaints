@@ -14,20 +14,21 @@ The dataset comes from CouncilStat, which is used by many NYC Council
 district offices to enter and track constituent cases that can range
 from issues around affordable housing, to potholes and pedestrian
 safety. This dataset aggregates the information that individual staff
-have input. However, district staffs handle a wide range of complex
+have entered. However, district staffs handle a wide range of complex
 issues. Each offices uses the program differently, and thus records
 cases, differently and so comparisons between accounts may be difficult.
-Not all offices use the program. For more info -
-<http://labs.council.nyc/districts/data/>
+Not all offices use the program. For more info see
+<http://labs.council.nyc/districts/data/>.
 
 This is a teaching package; the data are not clean—in particular there
 are spurious zip codes in the complaints data, as well as other issues.
 
 Data sourced from [NYC Open
-Data](https://data.cityofnewyork.us/City-Government/NYC-Council-Constituent-Services/9hzi-kbqb)
+Data](https://data.cityofnewyork.us/City-Government/NYC-Council-Constituent-Services/9hzi-kbqb).
 
 The package also includes `nyc_zips` and `census_vars`. The former is a
-table of NYC zip codes. The latter is a table the names of some ACS
+table of NYC zip codes. The latter is a table of the names of some
+Census Bureau [ACS](https://www.census.gov/programs-surveys/acs.html)
 variables.
 
 ## Installation
