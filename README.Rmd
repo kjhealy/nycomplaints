@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/kjhealy/nycomplaints/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kjhealy/nycomplaints/actions/workflows/R-CMD-check.yaml)
+[![R-universe version](https://kjhealy.r-universe.dev/nycomplaints/badges/version)](https://kjhealy.r-universe.dev/nycomplaints)
 <!-- badges: end -->
 
 The dataset comes from CouncilStat, which is used by many NYC Council district offices to enter and track constituent cases that can range from issues around affordable housing, to potholes and pedestrian safety. This dataset aggregates the information that individual staff have input. However, district staffs handle a wide range of complex issues. Each offices uses the program differently, and thus records cases, differently and so comparisons between accounts may be difficult. Not all offices use the program. For more info - http://labs.council.nyc/districts/data/
@@ -36,6 +37,17 @@ You can install nycomplaints from [GitHub](https://github.com/kjhealy/nycomplain
 ``` r
 remotes::install_github("kjhealy/nycomplaints@main")
 ```
+
+Alternatively, install this package from my [r-universe](https://kjhealy.r-universe.dev):
+
+```r
+install.packages(
+  "nycomplaints",
+  repos = c("https://kjhealy.r-universe.dev", "https://cloud.r-project.org")
+)
+```
+
+Including `https://cloud.r-project.org` ensures dependencies on CRAN are resolved automatically.
 
 ## Loading the Data
 

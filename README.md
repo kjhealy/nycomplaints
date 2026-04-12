@@ -6,6 +6,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/kjhealy/nycomplaints/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kjhealy/nycomplaints/actions/workflows/R-CMD-check.yaml)
+[![R-universe
+version](https://kjhealy.r-universe.dev/nycomplaints/badges/version)](https://kjhealy.r-universe.dev/nycomplaints)
 <!-- badges: end -->
 
 The dataset comes from CouncilStat, which is used by many NYC Council
@@ -36,6 +38,19 @@ You can install nycomplaints from
 ``` r
 remotes::install_github("kjhealy/nycomplaints@main")
 ```
+
+Alternatively, install this package from my
+[r-universe](https://kjhealy.r-universe.dev):
+
+``` r
+install.packages(
+  "nycomplaints",
+  repos = c("https://kjhealy.r-universe.dev", "https://cloud.r-project.org")
+)
+```
+
+Including `https://cloud.r-project.org` ensures dependencies on CRAN are
+resolved automatically.
 
 ## Loading the Data
 
