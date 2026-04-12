@@ -59,11 +59,18 @@
 <p>You can install nycomplaints from <a href="https://github.com/kjhealy/nycomplaints" class="external-link">GitHub</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"kjhealy/nycomplaints@main"</span><span class="op">)</span></span></code></pre></div>
+<p>Alternatively, install this package from my <a href="https://kjhealy.r-universe.dev" class="external-link">r-universe</a>:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span></span>
+<span>  <span class="st">"nycomplaints"</span>,</span>
+<span>  repos <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"https://kjhealy.r-universe.dev"</span>, <span class="st">"https://cloud.r-project.org"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>Including <code>https://cloud.r-project.org</code> ensures dependencies on CRAN are resolved automatically.</p>
 </div>
 <div class="section level2">
 <h2 id="loading-the-data">Loading the Data<a class="anchor" aria-label="anchor" href="#loading-the-data"></a>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span> <span class="co"># Optional but strongly recommended</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/kjhealy/nycomplaints" class="external-link">nycomplaints</a></span><span class="op">)</span></span>
 <span></span>
@@ -152,6 +159,7 @@
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://github.com/kjhealy/nycomplaints/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/kjhealy/nycomplaints/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://kjhealy.r-universe.dev/nycomplaints" class="external-link"><img src="https://kjhealy.r-universe.dev/nycomplaints/badges/version" alt="R-universe version"></a></li>
 </ul>
 </div>
 

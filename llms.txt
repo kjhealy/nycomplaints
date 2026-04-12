@@ -29,6 +29,19 @@ You can install nycomplaints from
 remotes::install_github("kjhealy/nycomplaints@main")
 ```
 
+Alternatively, install this package from my
+[r-universe](https://kjhealy.r-universe.dev):
+
+``` r
+install.packages(
+  "nycomplaints",
+  repos = c("https://kjhealy.r-universe.dev", "https://cloud.r-project.org")
+)
+```
+
+Including `https://cloud.r-project.org` ensures dependencies on CRAN are
+resolved automatically.
+
 ## Loading the Data
 
 ``` r
