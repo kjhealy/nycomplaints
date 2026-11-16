@@ -27,6 +27,7 @@ You can install nycomplaints from
 [GitHub](https://github.com/kjhealy/nycomplaints) with:
 
 ``` r
+
 remotes::install_github("kjhealy/nycomplaints@main")
 ```
 
@@ -34,6 +35,7 @@ Alternatively, install this package from my
 [r-universe](https://kjhealy.r-universe.dev):
 
 ``` r
+
 install.packages(
   "nycomplaints",
   repos = c("https://kjhealy.r-universe.dev", "https://cloud.r-project.org")
@@ -46,6 +48,7 @@ resolved automatically.
 ## Loading the Data
 
 ``` r
+
 library(tidyverse) # Optional but strongly recommended
 library(nycomplaints)
 

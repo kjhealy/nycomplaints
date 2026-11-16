@@ -81,11 +81,11 @@ Table: Data summary
 
 **Variable type: Date**
 
-|               |           |               |            |            |            |          |
-|---------------|-----------|---------------|------------|------------|------------|----------|
-| skim_variable | n_missing | complete_rate | min        | max        | median     | n_unique |
-| opendate      | 0         | 1.00          | 2015-01-01 | 2025-01-09 | 2018-06-19 | 3296     |
-| closedate     | 14142     | 0.96          | 2015-01-02 | 2025-01-09 | 2018-11-20 | 2686     |
+|  |  |  |  |  |  |  |
+|----|----|----|----|----|----|----|
+| skim_variable | n_missing | complete_rate | min | max | median | n_unique |
+| opendate | 0 | 1.00 | 2015-01-01 | 2025-01-09 | 2018-06-19 | 3296 |
+| closedate | 14142 | 0.96 | 2015-01-02 | 2025-01-09 | 2018-11-20 | 2686 |
 
 **Variable type: character**
 
